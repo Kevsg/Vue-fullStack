@@ -20,7 +20,7 @@ module.exports = {
           break
         case 'password':
           res.status(400).send({
-            error: 'The password provided failes to match the following rules:'
+            error: 'The password provided failed to match the requirement.'
           })
           break
         default:
