@@ -35,7 +35,7 @@ module.exports = {
       })
       if (!user) {
         res.status(403).send({
-          error: 'The login information was incorrect'
+          error: 'The login information was incorrect User error'
         })
       }
 
