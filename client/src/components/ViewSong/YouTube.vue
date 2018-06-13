@@ -1,0 +1,27 @@
+<template>
+    <panel title="YouTube Video">
+        <youtube 
+            :video-id="youtubeId"
+            :player-width="400"
+            :player-height="300">
+        </youtube>
+    </panel>
+</template>
+
+<script>
+import Panel from '@/components/Panels'
+
+export default {
+    props: [
+        'youtubeId'
+    ],
+    components :{
+        Panel
+    }
+}
+</script>
+
+<style>
+
+</style>
+
