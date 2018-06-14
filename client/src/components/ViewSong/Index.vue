@@ -29,7 +29,6 @@
 <script>
 import SongsService from '@/services/SongsService'
 import Tab from './Tab'
-import Panel from '@/components/Panels'
 import SongMetadata from './SongMetadata'
 import YouTube from './YouTube'
 import Lyrics from './Lyrics'
@@ -45,7 +44,6 @@ export default {
         this.song = (await SongsService.show(songId)).data
     },
     components: {
-        Panel,
         SongMetadata,
         YouTube,
         Lyrics,
