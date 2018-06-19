@@ -2,7 +2,7 @@
 <div>
   <v-layout>
     <v-flex xs6 offset-xs3>
-      <songs-search-panel/>
+      <songs-search-panel class="mb-2"/>
       <songs-panel/>
     </v-flex>
   </v-layout> 
@@ -26,11 +26,6 @@ export default {
     },
     async mounted () {
       this.songs = (await SongsService.index()).data
-    },
-    methods: {
-      navigateTo (route) {
-        this.$router.push(route)
-      }
     }
 }
 

@@ -7,7 +7,7 @@
           slot="action" 
           class="cyan accent-2" 
           light medium absolute right middle fab  
-          @click="navigateTo({name: 'songs-create'})"> 
+          :to="{name: 'songs-create'}"> 
               <v-icon>add</v-icon>
           </v-btn>
 
@@ -22,7 +22,7 @@
                   <v-btn
                     dark
                     class="cyan"
-                    @click="navigateTo({
+                    :to="({
                       name: 'song',
                       params: {
                         songId: song.id
@@ -53,12 +53,12 @@ export default {
           songs: null
         }   
     },
-    async mounted () {
-      this.songs = (await SongsService.index()).data
-    },
-    methods: {
-      navigateTo (route) {
-        this.$router.push(route)
+    watch: {
+      '$route.query.search': {
+        immediate: true,
+        async handler (value) {
+          this.songs = (await SongsService.index(value)).data
+        }
       }
     }
 }
@@ -66,6 +66,9 @@ export default {
 </script>
 
 <style scoped>
-
+.album-image {
+  width: 70%;
+  margin: 0 auto;
+}
 
 </style>
